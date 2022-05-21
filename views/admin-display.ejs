@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/project.css" rel="stylesheet" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <% for(var i = 0; i< data.length; i++) {%> 
+
+        <table class="tg">
+            <thead>
+              <tr>
+                <th class="tg-smvl">ID</th>
+                <th class="tg-smvl">Customer Email</th>
+                <th class="tg-smvl">Order Number</th>
+                <th class="tg-og4q">Date</th>
+                <th class="tg-og4q">MainDish</th>
+                <th class="tg-og4q">Side Dish</th>
+                <th class="tg-og4q">Drink</th>
+                <th class="tg-og4q">Confirmation</th>
+                <th class="tg-og4q">Actions</th>
+
+    
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tg-cjtp"><%= data[i].id %></td>
+                <td class="tg-cjtp"><%= data[i].cust_email %></td>
+                <td class="tg-cjtp"><%= data[i].order_nm %></td>
+                <td class="tg-cjtp"><%= new Date(data[i].date).toLocaleDateString() %></td>
+                <td class="tg-cjtp"><%= data[i].main_dsh %></td>
+                <td class="tg-cjtp"><%= data[i].side_dsh %></td>
+                <td class="tg-cjtp"><%= data[i].drink %></td>
+                <td class="tg-cjtp"><%= data[i].order_con %> </td>
+                
+                <td class="tg-cjtp">
+                    <div> <a href="/admindisplay/edit/<%=data[i].id %>"> <button> EDIT </button></a> ||
+                    <!-- <a href="/project/delete/<%=data[i].id %>"> <button> DELETE </button></a> </div> -->
+    
+                    <!-- <div> <a href="/project/create"> <button> Create A Project </button></a> -->
+                        <a href="/notes/display/<%=data[i].id %>"> <button> Notes </button>
+                    </div>
+                    
+                    
+                </td>
+              </tr>
+            </tbody>
+            </table>
+            
+            <% } %>
+</body>
+</html>

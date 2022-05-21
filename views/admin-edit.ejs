@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    
+
+
+    <form action="/admin/update" method="post">
+
+        
+
+        <div>
+            <input hidden type="number" name="id" value="<%= data[0].id %>"/>
+
+            <label for="order_nm">Order Number</label>
+            <input disabled type="number" name="order_nm" value="<%= data[0].order_nm %>"/>
+
+
+
+            <div>
+                <label for="cust_email">Customer Email</label>
+                <input type="email" name="cust_email" value="<%= data[0].cust_email %>">
+            </div>    
+        <div>
+                <label for="date">The Date for the order </label>
+                <input type="date" name="date" value="<%= data[0].date %>">
+        </div>
+        <div>
+            <label for="main_dsh"> Main Dish  </label>
+            <input type="text" name="main_dsh">
+        </div>
+      
+        
+        <div>
+            <label for="side_dsh">side dish </label>
+            <input type="text" name="side_dsh">
+        </div>
+
+        <div>
+            <label for="droml">Drink </label>
+            <input type="text" name="drink">
+        </div>
+        
+        <div>
+            <label for="order_con">Confirmation order </label>
+            <input type="number" name="order_con" min="0"max="1"  >
+        </div>
+        
+        
+        
+        <div>
+            <input type="submit" value="Update" >
+        </div>
+        
+        
+    </form>
+    
